@@ -7,12 +7,13 @@ from django.contrib.auth.models import User
 class Product(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     price = models. FloatField()
+    old_price = models.FloatField()
     url = models.CharField(max_length=225)
 
 
 class UserSubscription(models.Model):
     user = models.ManyToManyField(User,blank=True)
-    subscribe = models.CharField(max_length=20)
+    subscribe = models.BooleanField(default=False)
     product = models.ManyToManyField(Product, blank=True,null=True)
     reason = models.CharField(max_length=225, blank=True, null=True)
     notification_choice = (('ALWAYS', 'ALWAYS'),
