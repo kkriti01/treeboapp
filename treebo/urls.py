@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^subscribe/$', subscribe, name="subscribe"),
     url(r'^unsubscribe/$', unsubscribe, name="unsubscribe"),
     url(r'^dataprice/$', priceDataPoint, name="priceDataPoint"),
-    url(r'^notify/$', notify, name="notify"),
+    url(r'^notify/$', notify, name="notify_user"),
 
 
 

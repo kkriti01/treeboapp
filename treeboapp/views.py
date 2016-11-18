@@ -11,11 +11,8 @@ from .models import UserSubscription, Product
 def subscribe(request):
     if request.method == 'POST':
         user_id = request.POST.get('user_id', None)
-        print user_id
         product_id = request.POST.get('product_id', None)
-        print product_id
         notification_interval = request.POST.get('when', None)
-        print notification_interval
         if user_id and product_id and notification_interval:
             user = User.objects.get(id=user_id)
             product = Product.objects.get(id=product_id)

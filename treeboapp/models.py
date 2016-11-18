@@ -14,7 +14,7 @@ class Product(models.Model):
 class UserSubscription(models.Model):
     user = models.ManyToManyField(User,blank=True)
     subscribe = models.BooleanField(default=False)
-    product = models.ManyToManyField(Product, blank=True,null=True)
+    product = models.ManyToManyField(Product, blank=True)
     reason = models.CharField(max_length=225, blank=True, null=True)
     notification_choice = (('ALWAYS', 'ALWAYS'),
                            ('ALL_TIME_LOW', 'ALL_TIME_LOW'),
