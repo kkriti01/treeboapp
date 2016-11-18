@@ -60,7 +60,7 @@ def priceDataPoint(request):
 
 
 @receiver(post_save, sender=Product)
-def notify(sender,instance, created,**kwargs):
+def notify(request,sender,instance, created,**kwargs):
     if created == 'False':
         print "in notification"
         print instance
